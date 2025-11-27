@@ -1,0 +1,823 @@
+{
+  "table_of_contents": [
+    {
+      "title": "BID SUBMISSION",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          71.65261986851692,
+          71.23314410448074
+        ],
+        [
+          171.81597900390625,
+          71.23314410448074
+        ],
+        [
+          171.81597900390625,
+          86.04282706975937
+        ],
+        [
+          71.65261986851692,
+          86.04282706975937
+        ]
+      ]
+    },
+    {
+      "title": "To:",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          71.27413737773895,
+          95.90513473749161
+        ],
+        [
+          91.43967354297638,
+          95.90513473749161
+        ],
+        [
+          91.43967354297638,
+          110.75721538066864
+        ],
+        [
+          71.27413737773895,
+          110.75721538066864
+        ]
+      ]
+    },
+    {
+      "title": "From:",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          72.02399444580078,
+          198.9386851787567
+        ],
+        [
+          106.71348595619202,
+          198.9386851787567
+        ],
+        [
+          106.71348595619202,
+          214.05177855491638
+        ],
+        [
+          72.02399444580078,
+          214.05177855491638
+        ]
+      ]
+    },
+    {
+      "title": "Innovate Integration Solutions Pvt. Ltd.",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          71.48237228393555,
+          214.14508295059204
+        ],
+        [
+          296.00421380996704,
+          214.14508295059204
+        ],
+        [
+          296.00421380996704,
+          229.13006591796875
+        ],
+        [
+          71.48237228393555,
+          229.13006591796875
+        ]
+      ]
+    },
+    {
+      "title": "Subject: Bid for Tender No: 73448, CRFQ No: 1000352329 \u2013 Selection of Bidder for \nImplementation of the Command & Control Centre",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          71.52528870105743,
+          318.77707600593567
+        ],
+        [
+          543.115966796875,
+          318.77707600593567
+        ],
+        [
+          543.115966796875,
+          350.6041896343231
+        ],
+        [
+          71.52528870105743,
+          350.6041896343231
+        ]
+      ]
+    },
+    {
+      "title": "Priya Sharma",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          72.02399444580078,
+          231.8259472846985
+        ],
+        [
+          150.00101244449615,
+          231.8259472846985
+        ],
+        [
+          148.80569994449615,
+          246.4355320930481
+        ],
+        [
+          70.92118039727211,
+          246.4355320930481
+        ]
+      ]
+    },
+    {
+      "title": "Part 1: Techno-Commercial Bid",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          71.76276075839996,
+          70.73159462213516
+        ],
+        [
+          282.63349735736847,
+          70.73159462213516
+        ],
+        [
+          281.43818485736847,
+          87.86377340555191
+        ],
+        [
+          70.56744825839996,
+          87.86377340555191
+        ]
+      ]
+    },
+    {
+      "title": "1. Bidder Profile",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          71.48398643732071,
+          97.64290255308151
+        ],
+        [
+          180.3184790611267,
+          97.64290255308151
+        ],
+        [
+          180.3184790611267,
+          114.95814371109009
+        ],
+        [
+          71.48398643732071,
+          114.95814371109009
+        ]
+      ]
+    },
+    {
+      "title": "2. Response to Bid Qualification Criterion (BQC) (Ref: Annexure 1, \nSection 1.2.1)",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          71.27408266067505,
+          69.91237235069275
+        ],
+        [
+          516.1298828125,
+          69.91237235069275
+        ],
+        [
+          516.1298828125,
+          107.18404412269592
+        ],
+        [
+          71.27408266067505,
+          107.18404412269592
+        ]
+      ]
+    },
+    {
+      "title": "3. Response to Technical Requirements (Ref: Annexure 1, Section \n1.2.2)",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          71.85928165912628,
+          97.59918308258057
+        ],
+        [
+          514.5227179527283,
+          97.59918308258057
+        ],
+        [
+          513.4031982421875,
+          134.03911685943604
+        ],
+        [
+          70.66396915912628,
+          134.03911685943604
+        ]
+      ]
+    },
+    {
+      "title": "4. Compliance and Declarations",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          71.71845817565918,
+          71.26221764087677
+        ],
+        [
+          286.38141560554504,
+          71.26221764087677
+        ],
+        [
+          285.18610310554504,
+          87.84127342700958
+        ],
+        [
+          70.52314567565918,
+          87.84127342700958
+        ]
+      ]
+    },
+    {
+      "title": "Part 2: Quality Bid",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          71.28346207737923,
+          70.71199196577072
+        ],
+        [
+          194.78257012367249,
+          70.71199196577072
+        ],
+        [
+          194.78257012367249,
+          87.94478040933609
+        ],
+        [
+          71.28346207737923,
+          87.94478040933609
+        ]
+      ]
+    },
+    {
+      "title": "5. Response to Quality Score Matrix (Ref: Annexure 1, Section 1.3)",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          71.26782667636871,
+          97.81131899356842
+        ],
+        [
+          515.2751140594482,
+          97.81131899356842
+        ],
+        [
+          515.2751140594482,
+          115.17407977581024
+        ],
+        [
+          71.26782667636871,
+          115.17407977581024
+        ]
+      ]
+    },
+    {
+      "title": "1. Solution / Platform Implementation (Max Marks: 30)",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          71.43982064723969,
+          180.05031609535217
+        ],
+        [
+          379.2113585472107,
+          180.05031609535217
+        ],
+        [
+          379.2113585472107,
+          195.48257517814636
+        ],
+        [
+          71.43982064723969,
+          195.48257517814636
+        ]
+      ]
+    },
+    {
+      "title": "2. Bidders' Certification for Service Delivery (Max Marks: 10)",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          71.77346706390381,
+          589.4637022018433
+        ],
+        [
+          417.40335845947266,
+          587.9168272018433
+        ],
+        [
+          416.20804595947266,
+          602.4300842285156
+        ],
+        [
+          70.57815456390381,
+          603.937047958374
+        ]
+      ]
+    },
+    {
+      "title": "4. Demonstration of Video Analytics (Max Marks: 10)",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.02399444580078,
+          326.79920053482056
+        ],
+        [
+          372.35064125061035,
+          326.79920053482056
+        ],
+        [
+          371.15532875061035,
+          342.7326078414917
+        ],
+        [
+          71.69228518009186,
+          342.7326078414917
+        ]
+      ]
+    },
+    {
+      "title": "5. Demonstration of Capabilities (Max Marks: 15)",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.02399444580078,
+          510.42933225631714
+        ],
+        [
+          350.4452848434448,
+          510.42933225631714
+        ],
+        [
+          349.2499723434448,
+          526.5476489067078
+        ],
+        [
+          72.02399444580078,
+          526.5476489067078
+        ]
+      ]
+    },
+    {
+      "title": "Part 3: Price Bid",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          71.04954662919044,
+          70.40522396564484
+        ],
+        [
+          182.15193843841553,
+          70.40522396564484
+        ],
+        [
+          182.15193843841553,
+          87.8252112865448
+        ],
+        [
+          71.04954662919044,
+          87.8252112865448
+        ]
+      ]
+    },
+    {
+      "title": "6. Price Bid Submission (Ref: Annexure 1, Section 1.4)",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          71.18443787097931,
+          97.40947043895721
+        ],
+        [
+          435.17334508895874,
+          97.40947043895721
+        ],
+        [
+          435.17334508895874,
+          115.28447306156158
+        ],
+        [
+          71.18443787097931,
+          115.28447306156158
+        ]
+      ]
+    },
+    {
+      "title": "Annexures (As Submitted on E-Procurement Portal)",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          71.48316568136215,
+          647.6470770835876
+        ],
+        [
+          369.46292996406555,
+          647.6470770835876
+        ],
+        [
+          369.46292996406555,
+          663.184654712677
+        ],
+        [
+          71.48316568136215,
+          663.184654712677
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          87
+        ],
+        [
+          "Line",
+          33
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          27
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          30
+        ],
+        [
+          "Line",
+          8
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          178
+        ],
+        [
+          "TableCell",
+          98
+        ],
+        [
+          "Line",
+          61
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "Table",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          63
+        ],
+        [
+          "TableCell",
+          26
+        ],
+        [
+          "Line",
+          18
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Table",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          44
+        ],
+        [
+          "Line",
+          10
+        ],
+        [
+          "ListItem",
+          6
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          115
+        ],
+        [
+          "Line",
+          29
+        ],
+        [
+          "ListItem",
+          15
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          91
+        ],
+        [
+          "Line",
+          28
+        ],
+        [
+          "ListItem",
+          15
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          243
+        ],
+        [
+          "TableCell",
+          126
+        ],
+        [
+          "Line",
+          45
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "ListItem",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          81
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "ListItem",
+          8
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/control-center-bid-separated"
+}

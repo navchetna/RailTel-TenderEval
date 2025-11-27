@@ -1,0 +1,36 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+services:
+  vllm-service:
+    image: ${REGISTRY:-opea}/vllm-gaudi:${TAG:-latest}
+    container_name: vllm-gaudi-server
+    ports:
+      - "8007:80"
+    volumes:
+      - "${MODEL_CACHE:-./data}:/data"
+    environment:
+      no_proxy: ${no_proxy}
+      http_proxy: ${http_proxy}
+      https_proxy: ${https_proxy}
+      HF_TOKEN: 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
+      HABANA_VISIBLE_DEVICES: 3
+      OMPI_MCA_btl_vader_single_copy_mechanism: none
+      LLM_MODEL_ID: Qwen/Qwen2.5-VL-7B-Instruct
+      NUM_CARDS: 1
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
+      VLLM_TORCH_PROFILER_DIR: "/mnt"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:80/health || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 100
+    runtime: habana
+    cap_add:
+      - SYS_NICE
+    ipc: host
+    command: --model ${LLM_MODEL_ID} --tensor-parallel-size 1 --host 0.0.0.0 --port 80 --block-size 128 --max-num-seqs 256 --max-seq-len-to-capture 2048
+
+networks:
+  default:
+    driver: bridge

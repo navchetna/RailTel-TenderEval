@@ -1,0 +1,93 @@
+services:
+  # MongoDB Database
+  mongo:
+    image: mongo:7.0
+    container_name: tender_mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"  # Changed from 27018 to 27017
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: agents
+      MONGO_INITDB_ROOT_PASSWORD: agents
+      MONGO_INITDB_DATABASE: tender_eval
+      http_proxy: http://proxy-dmz.intel.com:912
+      https_proxy: http://proxy-dmz.intel.com:912
+    networks:
+      - tender_network
+
+  # Backend API
+  backend:
+    build:
+      context: ./comps
+      dockerfile: Dockerfile
+      args:
+        - http_proxy=http://proxy-dmz.intel.com:912
+        - https_proxy=http://proxy-dmz.intel.com:912
+    container_name: tender_backend
+    restart: unless-stopped
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./out:/app/out
+      - ./tender-eval-docs:/app/tender-eval-docs
+      - ./data:/app/data
+    environment:
+      - MONGO_URI=mongodb://agents:agents@mongo:27017/tender_eval?authSource=admin
+      - DB_NAME=tender_eval
+      - GROQ_API_KEY=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
+      - PDF_DIR=/app/tender-eval-docs
+      - http_proxy=http://proxy-dmz.intel.com:912
+      - https_proxy=http://proxy-dmz.intel.com:912
+      - HTTP_PROXY=http://proxy-dmz.intel.com:912
+      - HTTPS_PROXY=http://proxy-dmz.intel.com:912
+    depends_on:
+      - mongo
+    networks:
+      - tender_network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+      args:
+        - http_proxy=http://proxy-dmz.intel.com:912
+        - https_proxy=http://proxy-dmz.intel.com:912
+        - VITE_API_BASE_URL=http://g2-wyn04.iind.intel.com:8050
+    container_name: tender_frontend
+    restart: unless-stopped
+    ports:
+      - "8081:80"  # Nginx runs on port 80 internally
+    depends_on:
+      - backend
+    networks:
+      - tender_network
+
+  # Optional: Mongo Express for database management
+  mongo-express:
+    image: mongo-express:1.0.0
+    container_name: tender_mongo_express
+    restart: unless-stopped
+    ports:
+      - "8082:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: agents
+      ME_CONFIG_MONGODB_ADMINPASSWORD: agents
+      ME_CONFIG_MONGODB_URL: mongodb://agents:agents@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+      http_proxy: http://proxy-dmz.intel.com:912
+      https_proxy: http://proxy-dmz.intel.com:912
+    depends_on:
+      - mongo
+    networks:
+      - tender_network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  tender_network:
+    driver: bridge

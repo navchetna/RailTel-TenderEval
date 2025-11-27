@@ -1,0 +1,152 @@
+{
+    "price_compliance": {
+        "C&C Platform and it's<br>components (All<br>License/Modules Inclusive)": {
+            "Sl.No": "1",
+            "Unnamed: 3": "Lump<br>sum",
+            "Total<Br>Quantity": "1",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "AMC of C&C Platform<br>License & Modules per year<br>after 1 year warranty": {
+            "Sl.No": "2",
+            "Unnamed: 3": "Per year",
+            "Total<Br>Quantity": "4",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "VA Solution at RO (10<br>Analytics at one location)": {
+            "Sl.No": "3",
+            "Unnamed: 3": "Per<br>device",
+            "Total<Br>Quantity": "150",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "AMC VA Solution at RO (10<br>Analytics at one location)": {
+            "Sl.No": "4",
+            "Unnamed: 3": "Per<br>device<br>per<br>quarter",
+            "Total<Br>Quantity": "2400",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "VA Solution at Terminals and<br>LPG Plants (upto 20<br>Analytics at one location)": {
+            "Sl.No": "5",
+            "Unnamed: 3": "Per<br>device",
+            "Total<Br>Quantity": "130",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "AMC VA Solution at<br>Terminals and LPG Plants<br>(upto 20 Analytics at one<br>location)": {
+            "Sl.No": "6",
+            "Unnamed: 3": "Per<br>device<br>per<br>quarter",
+            "Total<Br>Quantity": "2080",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Implementation Cost of C&C<br>Platform": {
+            "Sl.No": "7",
+            "Unnamed: 3": "Lump<br>sum",
+            "Total<Br>Quantity": "1",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Platform Maintenance<br>Support": {
+            "Sl.No": "8",
+            "Unnamed: 3": "Per<br>quarter",
+            "Total<Br>Quantity": "16",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Call Centre Solution ( SaaS<br>30 User)": {
+            "Sl.No": "9",
+            "Unnamed: 3": "Per user<br>per month",
+            "Total<Br>Quantity": "1392",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Operator Cost Year 1(per<br>man month)": {
+            "Sl.No": "10",
+            "Unnamed: 3": "Per man<br>month",
+            "Total<Br>Quantity": "240",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Operator Cost Year 2(per<br>man month)": {
+            "Sl.No": "11",
+            "Unnamed: 3": "Per man<br>month",
+            "Total<Br>Quantity": "288",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Operator Cost Year 3(per<br>man month)": {
+            "Sl.No": "12",
+            "Unnamed: 3": "Per man<br>month",
+            "Total<Br>Quantity": "288",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Operator Cost Year 4(per<br>man month)": {
+            "Sl.No": "13",
+            "Unnamed: 3": "Per man<br>month",
+            "Total<Br>Quantity": "288",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Operator Cost Year 5(per<br>man month)": {
+            "Sl.No": "14",
+            "Unnamed: 3": "Per man<br>month",
+            "Total<Br>Quantity": "288",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        },
+        "Man-day Rate for<br>Modifications / Change<br>Request": {
+            "Sl.No": "15",
+            "Unnamed: 3": "Per Man<br>day",
+            "Total<Br>Quantity": "1000",
+            "Unit<Br>Cost": "",
+            "Total<Br>Cost (Ex.<Br>Tax)": "",
+            "Tax<Br>Rate": "",
+            "Total<Br>Cost": ""
+        }
+    },
+    "technical_compliance": {
+        "1": "Platform to have ability to control bi-directional control of field devices",
+        "2": "Platform to be web responsive",
+        "3": "Platform should have capability to monitor real time information from instruments like<br>CCTV, Field Sensors, etc.",
+        "4": "Platform should be able to be deployed on any of the cloud service provider",
+        "5": "Platform should handle all the data securely using HTTPS protocol",
+        "6": "Platform should be compliant with interoperability so that it can integrate with any<br>standard protocol or system available",
+        "7": "Platform should be able to integrate using API or integration adaptors",
+        "8": "Platform should have most of the features configurable, however it should be<br>customizable using objects/libraries/other programming languages",
+        "9": "Platform should be able to integrate with any authorization system for sign on like SSO,<br>LDAP etc.",
+        "10": "Platform should have the capability to integrate with multiple independent automation<br>systems",
+        "11": "Platform should have the capability to integrate with multiple database systems"
+    }
+}

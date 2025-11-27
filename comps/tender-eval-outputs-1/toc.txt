@@ -1,0 +1,7 @@
+2;1.1 Bid Evaluation Methodology
+2;1.2 Techno-Commercial Bid Evaluation
+3;1.2.1 Bid Qualification Criterion (BQC)
+3;1.2.2 Technical Requirements
+2;1.3 Quality Score Bid Evaluation
+2;1.4 Price Bid Evaluation
+2;1.5 Combined Quality and Price Bid Evaluation

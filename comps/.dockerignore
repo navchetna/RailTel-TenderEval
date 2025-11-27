@@ -1,0 +1,24 @@
+nano ~/kubernetes_files/akshit/text2sql/tender-eval/comps/.dockerignore
+```
+
+**Paste this content:**
+```
+myev/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv
+env/
+venv/
+.git/
+.gitignore
+*.log
+out/
