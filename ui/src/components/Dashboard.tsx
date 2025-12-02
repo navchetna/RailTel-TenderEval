@@ -671,7 +671,11 @@ const Dashboard = () => {
                 </TabsContent>
 
                 <TabsContent value="results" className="space-y-6">
-                  <ComparisonView comparisons={[]} explanation="" onGenerateReport={handleGenerateReport} />
+                  <ComparisonView 
+                    projectId={activeProjectId || undefined}
+                    tenderPdfId={currentProject?.tenderFile?.id}
+                    bidPdfId={currentProject?.bidFiles[0]?.id}
+                  />
                 </TabsContent>
               </Tabs>
             </div>

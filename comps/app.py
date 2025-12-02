@@ -32,7 +32,7 @@ from comps.dataprep.excel_to_json_tech import excel_to_technical_compliance_json
 load_dotenv()
 MONGO_URI = os.environ.get('MONGO_URI', 'mongodb://localhost:27017')
 DB_NAME = os.environ.get('DB_NAME', 'tender_eval')
-GROQ_API_KEY = os.environ.get('GROQ_API_KEY', "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")
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
 BASE_OUTPUT_DIR = os.path.abspath("out")
 
 
@@ -825,86 +825,6 @@ async def run_pipeline_stage(project_id: str, pdf_id: str, stage_id: int, reques
 
 
 
-    # elif stage_id == 3:
-    #     data = await request.json()
-    #     print("Recieved data", data)
-    #     compliance_sections = data.get("compliance_sections", {}).get("compliance_sections", {})
-    #     if not compliance_sections:
-    #         raise HTTPException(400, "Missing compliance_sections")
-        
-    #     # To do: make the output path dynamic
-    #     output_dir = get_pdf_output_dir(project_id, pdf_id)
-    #     output_json_path = os.path.join(output_dir, "output.json")
-    #     if not os.path.exists(output_json_path):
-    #         raise HTTPException(404, f"output.json not found at {output_json_path}")
-    #     with open(output_json_path, "r", encoding="utf-8") as f:
-    #         tree_json = json.load(f)
-    #     root_node = tree_json.get("root", {})
-
-
-    #     extracted = {}
-    #     print("Compliance sections:", compliance_sections)
-    #     for section_type, section_title in compliance_sections.items():
-    #         print("Processing section:", section_type, "with title:", section_title)
-    #         # Remove index/numbering (if needed), or leave as is for matching
-    #         section_heading = section_title
-    #         # if isinstance(section_title, str) and len(section_title) > 1 and section_title[1] == '.':
-    #         #     section_heading = section_title[2:]
-    #         found = traverse_json_tree(root_node, section_heading)
-    #         # print("Found:", found)
-    #         extracted[section_type] = {
-    #             "section_title": section_heading,
-    #             "markdown": found if found else None,
-    #             "full_heading": found[0] if found else None
-    #         }
-    #     return extracted
-
-    # elif stage_id == 4:
-    #     try:
-    #         body_bytes = await request.body()
-    #         if not body_bytes:
-    #             raise HTTPException(status_code=400, detail="Empty request body - JSON data is required for stage 4")
-    #         extracted = json.loads(body_bytes.decode('utf-8'))
-    #     except json.JSONDecodeError:
-    #         raise HTTPException(status_code=400, detail="Invalid JSON in request body - please provide valid JSON data")
-    #     except Exception as e:
-    #         raise HTTPException(status_code=500, detail=f"Unexpected error processing request: {str(e)}")
-
-    #     dfs = {}
-    #     extracted = extracted.get("compliance_sections", {})
-    #     print("Extracted sections:", len(extracted))
-
-    #     for k, v in extracted.items():
-    #         # print(f"Processing section: {k} with title: {v}")
-    #         markdown_content = extract_markdown_table_from_list(v.get('markdown'))
-    #         if markdown_content:
-    #             df = markdown_to_df(markdown_content, v['section_title'])
-    #             dfs[k] = df
-
-    #     excel_paths = stage_save_excel_files(output_dir, dfs)
-    #     print("Excel paths:", excel_paths)
-        
-    #     # Return filenames (or full URLs) for UI to fetch and display
-    #     excel_files = {}
-    #     for key, path in excel_paths.items():
-    #         filename = os.path.basename(path)  # e.g., "technical.xlsx"
-    #         # Optionally, construct full URL for direct access
-    #         file_url = f"http://localhost:8050/projects/{project_id}/pdfs/{pdf_id}/excel/{filename}"
-    #         excel_files[key] = {"filename": filename, "url": file_url}
-        
-    #     return {"excel_files": excel_files}
-    # # Stage 5: Transform compliance excels to json
-    # elif stage_id == 5:
-    #     excel_dir = os.path.join(output_dir, 'excel')
-    #     excel_paths = {f.split(".")[0]: os.path.join(excel_dir, f) for f in os.listdir(excel_dir) if f.endswith(".xlsx")}
-    #     json_outputs = stage_transform_to_json(output_dir, excel_paths)
-
-    #     # Construct and return the download URL for combined.json
-    #     combined_filename = "combined.json"
-    #     download_url = f"http://localhost:8050/projects/{project_id}/pdfs/{pdf_id}/json/{combined_filename}"
-        
-    #     return {"download_url": download_url}
-
     elif stage_id == 3:
             
         data = await request.json()
@@ -1087,6 +1007,211 @@ Make sure the table is well-formatted and ready for display.
 
 
 # Add this new endpoint after the existing pipeline stage endpoints
+
+# ============================================================================
+
+
+
+@app.post("/projects/{project_id}/compare")
+async def compare_tender_with_bid(project_id: str, request: Request):
+    """
+    Compare tender PDF with a bid PDF using LLM to assess compliance
+    """
+    try:
+        data = await request.json()
+        tender_pdf_id = data.get("tender_pdf_id")
+        bid_pdf_id = data.get("bid_pdf_id")
+        
+        if not tender_pdf_id or not bid_pdf_id:
+            raise HTTPException(400, "Both tender_pdf_id and bid_pdf_id are required")
+        
+        # Load tender combined.json
+        tender_output_dir = pdf_output_dir(project_id, tender_pdf_id)
+        tender_json_path = os.path.join(tender_output_dir, "combined.json")
+        
+        if not os.path.exists(tender_json_path):
+            raise HTTPException(404, f"Tender compliance data not found. Please run pipeline stage 3 for tender PDF first.")
+        
+        # Load bid combined.json
+        bid_output_dir = pdf_output_dir(project_id, bid_pdf_id)
+        bid_json_path = os.path.join(bid_output_dir, "combined.json")
+        
+        if not os.path.exists(bid_json_path):
+            raise HTTPException(404, f"Bid compliance data not found. Please run pipeline stage 3 for bid PDF first.")
+        
+        # Read both files
+        with open(tender_json_path, "r", encoding="utf-8") as f:
+            tender_data = json.load(f)
+        
+        with open(bid_json_path, "r", encoding="utf-8") as f:
+            bid_data = json.load(f)
+        
+        tender_sections = tender_data.get("compliance_sections", {})
+        bid_sections = bid_data.get("compliance_sections", {})
+        
+        # Perform comparison for each factor
+        comparison_results = {}
+        
+        for section_key in tender_sections.keys():
+            tender_section = tender_sections.get(section_key, {})
+            bid_section = bid_sections.get(section_key, {})
+            
+            tender_text = tender_section.get("text", "")
+            bid_text = bid_section.get("text", "")
+            
+            # Call LLM to compare
+            comparison = await ask_groq_for_compliance_comparison(
+                section_key=section_key,
+                tender_requirement=tender_text,
+                bid_response=bid_text
+            )
+            
+            comparison_results[section_key] = {
+                "section_title": tender_section.get("section_title", ""),
+                "tender_requirement": tender_text,
+                "bid_response": bid_text,
+                "compliance_status": comparison.get("compliance_status", "not-specified"),
+                "assessment_notes": comparison.get("assessment_notes", ""),
+                "tender_penalty": comparison.get("tender_penalty", "")
+            }
+        
+        # Save comparison results
+        comparison_output_path = os.path.join(tender_output_dir, "comparison_result.json")
+        with open(comparison_output_path, "w", encoding="utf-8") as f:
+            json.dump({
+                "tender_pdf_id": tender_pdf_id,
+                "bid_pdf_id": bid_pdf_id,
+                "comparison_results": comparison_results
+            }, f, indent=2, ensure_ascii=False)
+        
+        return {
+            "status": "success",
+            "comparison_results": comparison_results,
+            "comparison_file": comparison_output_path
+        }
+        
+    except Exception as e:
+        raise HTTPException(500, f"Error during comparison: {str(e)}")
+
+
+async def ask_groq_for_compliance_comparison(section_key: str, tender_requirement: str, bid_response: str):
+    """
+    Use Groq LLM to compare tender requirement with bid response for a specific section
+    """
+    if not GROQ_API_KEY:
+        return {
+            "compliance_status": "error",
+            "assessment_notes": "GROQ_API_KEY not configured",
+            "tender_penalty": ""
+        }
+    
+    client = Groq(api_key=GROQ_API_KEY)
+    
+    # Handle empty cases
+    if not tender_requirement or tender_requirement.strip() == "":
+        return {
+            "compliance_status": "not-specified",
+            "assessment_notes": "No tender requirement specified for this section",
+            "tender_penalty": ""
+        }
+    
+    if not bid_response or bid_response.strip() == "":
+        return {
+            "compliance_status": "not-specified",
+            "assessment_notes": "Bid has not provided information for this section",
+            "tender_penalty": ""
+        }
+    
+    system_prompt = f"""
+You are an expert tender evaluation specialist. Your task is to compare a tender requirement with a bidder's response and assess compliance.
+
+Section: {section_key}
+
+You will be given:
+1. Tender Requirement: What the tender document specifies
+2. Bid Response: What the bidder has submitted
+
+Your job is to analyze if the bid response meets the tender requirement and provide:
+1. **compliance_status**: Choose one of:
+   - "compliant": Bid fully meets the requirement
+   - "non-compliant": Bid does not meet the requirement or contradicts it
+   - "partial": Bid partially meets the requirement but has gaps
+   - "not-specified": Bid does not address this requirement at all
+
+2. **assessment_notes**: A brief 2-3 sentence explanation of your reasoning. Be specific about what matches, what doesn't, or what's missing.
+
+3. **tender_penalty**: Extract any penalty clause mentioned in the tender requirement (e.g., "0.5% per week delay"). If no penalty mentioned, return empty string.
+
+Respond ONLY with valid JSON in this exact format:
+{{
+    "compliance_status": "compliant|non-compliant|partial|not-specified",
+    "assessment_notes": "Your brief assessment here",
+    "tender_penalty": "Penalty clause if any"
+}}
+
+Be objective, fair, and thorough in your assessment.
+"""
+    
+    user_content = f"""
+**Tender Requirement:**
+{tender_requirement}
+
+**Bid Response:**
+{bid_response}
+
+Analyze and provide your compliance assessment.
+"""
+    
+    try:
+        chat_completion = client.chat.completions.create(
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.1  # Lower temperature for more consistent assessments
+        )
+        
+        response_text = chat_completion.choices[0].message.content
+        result = json.loads(response_text)
+        
+        # Validate response structure
+        if "compliance_status" not in result:
+            result["compliance_status"] = "not-specified"
+        if "assessment_notes" not in result:
+            result["assessment_notes"] = "Unable to assess"
+        if "tender_penalty" not in result:
+            result["tender_penalty"] = ""
+        
+        print(f"✓ Comparison complete for {section_key}: {result['compliance_status']}")
+        return result
+        
+    except Exception as e:
+        print(f"Error in LLM comparison for {section_key}: {e}")
+        return {
+            "compliance_status": "error",
+            "assessment_notes": f"Error during LLM assessment: {str(e)}",
+            "tender_penalty": ""
+        }
+
+# =======================================
+
+
+@app.get("/projects/{project_id}/pdfs/list")
+async def list_pdfs_with_details(project_id: str):
+    """
+    List all PDFs in a project with their IDs and types
+    """
+    pdfs = await get_pdf_meta_for_project(project_id)
+    return {
+        "project_id": project_id,
+        "pdfs": pdfs
+    }
+
+
+
+
 
 @app.post("/projects/{project_id}/pdfs/{pdf_id}/generate_table")
 async def generate_comparison_table(project_id: str, pdf_id: str):
